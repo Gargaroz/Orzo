@@ -11,23 +11,21 @@
 angular
   .module('orzoApp', [
     'ngAnimate',
-    'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'ngSanitize'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        redirectTo: '/login'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/login', {
+        templateUrl: 'views/login.tmpl.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginctrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404.html'
       });
   });
