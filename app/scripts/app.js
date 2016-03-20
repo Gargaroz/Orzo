@@ -50,6 +50,19 @@ angular
           }
         }
       })
+      .when('/register', {
+        templateUrl: 'views/register.tmpl.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'registerctrl',
+        resolve: {
+          unloggedUser: function(LoggedUserFactory){
+            var unloggedUser = {};
+            unloggedUser.name = LoggedUserFactory.getLoggedUserName();
+            unloggedUser.password = LoggedUserFactory.getLoggedUserPassword();
+            return unloggedUser;
+          }
+        }
+      })
       .otherwise({
         redirectTo: '/404'
       });

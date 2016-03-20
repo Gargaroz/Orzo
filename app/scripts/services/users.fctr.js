@@ -43,8 +43,8 @@ angular.module('orzoApp')
                 console.log("wtf?");
             }
         };
-        var _addUser = function (userName, password){
-            users.push({name: userName, password: password});
+        var _addUser = function (user){
+            users.push(user);
         };
     	var users = [
     	{
