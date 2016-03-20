@@ -1,37 +1,39 @@
 <style type="text/css">
 .text-enter {
 	text-align: center;
-	color: {{colore}};
+	color: red;
 }
 .form-login {
 	color: white;
 
 }
-
 body {
      margin: 0;
      background: url(http://www.annapurnadigital.com/wp-content/uploads/2013/11/colorado-website-seo-blog.jpg);
      background-size: 1440px 800px;
      background-repeat:no-repeatdisplay: compact;
-
-
-
 </style>
 
-<form role="form" ng-class="{ 'form-login':true}">
+
+
+
+<form name="loginForm" role="form" ng-class="{ 'form-login':true}">
 <p>
-<h3 ng-class="{ 'text-enter':true}"> STAI EFFETTUANDO {{stato}} UTENTE</h3> 
+<center><h3> BENVENUTO ACCEDI/REGISTRATI</h3> </center>
   <div class="form-group">
 	<label for="UserName">UserName:</label> 
-	<input type="text" class="form-control" name="username" ng-model="username" placeholder="Inserisci Nome Utente">
+	<input type="text" class="form-control" name="username" ng-model="username" ng-required="true" placeholder="Inserisci Nome Utente" >
   </div>
 
   <div class="form-group">
 	<label for="PassWord">PassWord:</label> 
-	<input type="password" class="form-control" name="password" ng-model="password" placeholder="Inserisci PassWord">
+	<input type="password" class="form-control" name="password" ng-model="password" ng-required="true" placeholder="Inserisci PassWord">
   </div>
 
-		<button type="submit" class="btn btn-primary"> {{stato}} </button>
-		<button type="submit" class="btn btn-warning" ng-click="cambiaStato()"> CAMBIA </button>
+	<button type="submit" ng-disabled="loginForm.username.$error.required || loginForm.password.$error.required || loginctrl.disLog" class="btn btn-primary" ng-click="loginctrl.controllo(username, password)"> ENTRA </button>
+
+		<button type="submit" ng-show="loginctrl.disReg" class="btn btn-primary">REGISTRATI</button><span ng-show="loginctrl.disReg" > {{loginctrl.messReg}} </span>	
+
+				<h3 ng-class="{ 'text-enter':true}"> {{loginctrl.messLog}}  </h3> 
 
 </form>
