@@ -14,12 +14,12 @@ angular.module('orzoApp')
     	var _getLoggedUser = function(){
     		return loggedUser;
     	};
-    	// var _getLoggedUserName = function(){
-    	// 	return loggedUser.name
-    	// };
-    	// var _getLoggedUserPassword = function(){
-    	// 	return loggedUser.password;
-    	// };
+    	var _getLoggedUserName = function(){
+    	   return loggedUser.name
+    	};
+    	var _getLoggedUserPassword = function(){
+    	   return loggedUser.password;
+    	};
     	// var _getLoggedUserRealName = function(){
     	// 	return loggedUser.realName;
     	// };
