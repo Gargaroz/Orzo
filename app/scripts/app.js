@@ -25,7 +25,10 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'loginctrl'
       })
+      .when('/404', {
+        templateUrl: '/404.html'
+      })
       .otherwise({
-        redirectTo: '/404.html'
+        redirectTo: '/404'
       });
   });
