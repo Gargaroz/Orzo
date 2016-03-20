@@ -8,6 +8,16 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('LoginCtrl', function () {
+  .controller('LoginCtrl', function ($scope) {
+
+  		$scope.stato="LOGIN";
+
+  		$scope.cambiaStato=function(){
+  			if($scope.stato==="LOGIN"){
+  				$scope.stato="REGISTRA";
+  			}else {
+  				$scope.stato="LOGIN";
+  			}
+  		}
 
   });
