@@ -1,7 +1,7 @@
 <style type="text/css">
 .text-enter {
 	text-align: center;
-	color: red;
+	color: white;
 }
 
 body {
@@ -29,8 +29,10 @@ body {
 
 	<button type="submit" ng-disabled="loginForm.username.$error.required || loginForm.password.$error.required || loginctrl.disLog" class="btn btn-primary" ng-click="loginctrl.controllo(username, password)"> ENTRA </button>
 
-		<button type="submit" ng-show="loginctrl.disReg" class="btn btn-primary">REGISTRATI</button><span ng-show="loginctrl.disReg" > {{loginctrl.messReg}} </span>	
+		<button type="submit" class="btn btn-primary">REGISTRATI</button><span ng-show="loginctrl.disReg" ></span>	
 
-				<h3 ng-class="{ 'text-enter':true}"> {{loginctrl.messLog}}  </h3> 
+				<h4 ng-class="{ 'text-enter':true}">{{loginctrl.messLog}}</h4> 
+
+				<p><h4 ng-show="loginctrl.disReg" ng-class="{ 'text-enter':true}"><img src="https://cdn3.iconfinder.com/data/icons/musthave/48/Negative.png" alt="ERRORE"> {{loginctrl.messReg}}</h4> </p>
 
 </form>
