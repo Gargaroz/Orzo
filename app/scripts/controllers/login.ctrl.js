@@ -8,7 +8,7 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('LoginCtrl',['UsersFactory','$location' ,  function (UsersFactory, $location) {
+  .controller('LoginCtrl',['UsersFactory','$location','LoggedUserFactory', function (UsersFactory, $location, LoggedUserFactory) {
       var vm=this;
         vm.disLog;;
         vm.messLog="";
@@ -25,13 +25,13 @@ angular.module('orzoApp')
            vm.messLog="Forse Non Ti Sei Registrato??";
             vm.disLog=false;
             vm.disReg=true;
-        }
+        } else vm.goToMain(user,pass);
       };
 
-
-
-          vm.goToMain=function(){
+          vm.goToMain=function(user, pass){
+            LoggedUserFactory.setLoggedUser(user,pass);
             $location.path("/main");
+
           }
 
 
