@@ -4,12 +4,20 @@
 	color: white;
 	font-size: 47px;
 }
+.text-second {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+
 .form-login {
 	color: white;
 }
 
 table td {
     border-top: none !important;
+   
+
 }
 
 
@@ -20,20 +28,23 @@ body {
      background-repeat:no-repeatdisplay: compact;
 </style>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 <span ng-class="{'text-enter':true}"> 
 <img src="https://cdn0.iconfinder.com/data/icons/winter-lollipop/128/Like.png">
 BENVENUTO {{mainctrl.utenteLoggato.toUpperCase()}} 
 </span> 
-<p>
-<table class='table'>
+<center>
+<span ng-class="{'text-second':true}"> Quali Avvenuture Intraprenderemo Oggi? :)</span> <br><br><br>
+</center>
+
+<table class='table' align="center"s>
 	<tbody>
 		<tr>
 			<td>
 		<button type="submit" class="btn btn-primary" ng-click="mainctrl.goToPannel()">PANNELLO DI CONTROLLO</button>
 			</td>
 			<td>
-		<button type="submit" class="btn btn-primary" ng-click="">ESCI & SALUTA</button>
+		<button type="submit" class="btn btn-primary" ng-click="mainctrl.esciUtente()">ESCI & SALUTA</button>
 			</td>
 		</tr>
 		<tr>

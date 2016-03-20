@@ -8,13 +8,19 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('MainCtrl', ['loggedUserName' ,'$location',function (loggedUserName, $location) {
+  .controller('MainCtrl', ['loggedUserName' ,'$location', 'LoggedUserFactory', function (loggedUserName, $location, LoggedUserFactory) {
       var vm=this;
       vm.utenteLoggato=loggedUserName;
+      
 
       	vm.goToPannel=function(user){
             $location.path('/controlpanel');
           };
+
+        vm.esciUtente=function(){
+        	vm.utenteLoggato=LoggedUserFactory.logout();
+        	 $location.path('/login');
+        }
 
 
     }]);

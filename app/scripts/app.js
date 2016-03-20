@@ -34,8 +34,8 @@ angular
         controllerAs: 'mainctrl',
         resolve: {
           loggedUserName: function(LoggedUserFactory, $location){
-            if (LoggedUserFactory.getLoggedUserName() == 'nessuno' || LoggedUserFactory.getLoggedUserPassword() == 'nessuno') $location.path("/login");
-            else return LoggedUserFactory.getLoggedUserName();
+          if (LoggedUserFactory.getLoggedUserName() == 'nessuno' || LoggedUserFactory.getLoggedUserPassword() == 'nessuno') $location.path("/login");
+           else return LoggedUserFactory.getLoggedUserName();
           }
         }
       })

@@ -15,6 +15,8 @@ angular.module('orzoApp')
         vm.messReg=" Ti Ho Abilitato La Funzione Per Registrarti";
         vm.disReg;
 
+        console.log(LoggedUserFactory.getLoggedUser());
+
       vm.controllo=function(user,pass){
         if(UsersFactory.checkCredentials(user,pass)==='La password è sbagliata'){
             vm.messLog="Hai Sbagliato La Password " + user.toUpperCase()
