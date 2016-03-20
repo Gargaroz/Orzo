@@ -9,6 +9,6 @@
  */
 angular.module('orzoApp')
   .controller('MainCtrl', ['loggedUser' ,function (loggedUser) {
-      
-      
+      var vm=this;
+      vm.utenteLoggato=loggedUser.name;
     }]);
