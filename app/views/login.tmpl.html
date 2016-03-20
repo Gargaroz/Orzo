@@ -1,1 +1,21 @@
-Pagina di login
+<style type="text/css">
+.text-center {text-align: center;}
+</style>
+
+<form role="form">
+<p>
+<h3 ng-class="{ 'text-center':true}"> {{stato}} UTENTE</h3>
+  <div class="form-group">
+	<label for="UserName">UserName:</label> 
+	<input type="text" class="form-control" name="username" ng-model="username" placeholder="Inserisci Nome Utente">
+  </div>
+
+  <div class="form-group">
+	<label for="PassWord">PassWord:</label> 
+	<input type="password" class="form-control" name="password" ng-model="password" placeholder="Inserisci PassWord">
+  </div>
+
+		<button type="submit" class="btn btn-primary"> {{stato}} </button>
+		<button type="submit" class="btn btn-warning" ng-click="cambiaStato()"> CAMBIA </button>
+
+</form>
