@@ -20,6 +20,9 @@ angular
       .when('/', {
         redirectTo: '/login'
       })
+      .when('/404', {
+        templateUrl: '/404.html'
+      })
       .when('/login', {
         templateUrl: 'views/login.tmpl.html',
         controller: 'LoginCtrl',
@@ -30,13 +33,22 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'mainctrl',
         resolve: {
-          loggedUser: function(LoggedUserFactory){
-            return LoggedUserFactory.getLoggedUser();
+          loggedUserName: function(LoggedUserFactory, $location){
+            if (LoggedUserFactory.getLoggedUserName() == 'nessuno' || LoggedUserFactory.getLoggedUserPassword() == 'nessuno') $location.path("/login");
+            else return LoggedUserFactory.getLoggedUserName();
           }
         }
       })
-      .when('/404', {
-        templateUrl: '/404.html'
+      .when('/controlpanel', {
+        templateUrl: 'views/control-panel.tmpl.html',
+        controller: 'ControlPanelCtrl',
+        controllerAs: 'controlpanelctrl',
+        resolve: {
+          loggedUser: function(LoggedUserFactory, $location){
+            if (LoggedUserFactory.getLoggedUserName() == 'nessuno' || LoggedUserFactory.getLoggedUserPassword() == 'nessuno') $location.path("/login");
+            else return LoggedUserFactory.getLoggedUser();
+          }
+        }
       })
       .otherwise({
         redirectTo: '/404'
