@@ -1,10 +1,26 @@
 <style type="text/css">
-.text-center {text-align: center;}
+.text-enter {
+	text-align: center;
+	color: {{colore}};
+}
+.form-login {
+	color: white;
+
+}
+
+body {
+     margin: 0;
+     background: url(http://www.annapurnadigital.com/wp-content/uploads/2013/11/colorado-website-seo-blog.jpg);
+     background-size: 1440px 800px;
+     background-repeat:no-repeatdisplay: compact;
+
+
+
 </style>
 
-<form role="form">
+<form role="form" ng-class="{ 'form-login':true}">
 <p>
-<h3 ng-class="{ 'text-center':true}"> {{stato}} UTENTE</h3>
+<h3 ng-class="{ 'text-enter':true}"> STAI EFFETTUANDO {{stato}} UTENTE</h3> 
   <div class="form-group">
 	<label for="UserName">UserName:</label> 
 	<input type="text" class="form-control" name="username" ng-model="username" placeholder="Inserisci Nome Utente">
