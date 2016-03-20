@@ -7,6 +7,12 @@
 .form-login {
 	color: white;
 }
+
+table td {
+    border-top: none !important;
+}
+
+
 body {
      margin: 0;
      background: url(http://www.annapurnadigital.com/wp-content/uploads/2013/11/colorado-website-seo-blog.jpg);
@@ -19,4 +25,38 @@ body {
 <img src="https://cdn0.iconfinder.com/data/icons/winter-lollipop/128/Like.png">
 BENVENUTO {{mainctrl.utenteLoggato.toUpperCase()}} 
 </span> 
+<p>
+<table class='table'>
+	<tbody>
+		<tr>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="mainctrl.goToPannel()">PANNELLO DI CONTROLLO</button>
+			</td>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="">ESCI & SALUTA</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="">FUNZIONE 3</button>
+			</td>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="">FUNZIONE 4</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="">FUNZIONE 5</button>
+			</td>
+			<td>
+		<button type="submit" class="btn btn-primary" ng-click="">FUNZIONE 6</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
 

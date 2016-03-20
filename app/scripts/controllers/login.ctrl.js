@@ -25,11 +25,11 @@ angular.module('orzoApp')
            vm.messLog="Forse Non Ti Sei Registrato??";
             vm.disLog=false;
             vm.disReg=true;
-        } else vm.goToMain(user,pass);
+        } else vm.goToMain(user);
       };
 
-          vm.goToMain=function(user, pass){
-            LoggedUserFactory.setLoggedUser(user,pass);
+          vm.goToMain=function(user){
+            LoggedUserFactory.setLoggedUser(user);
             $location.path("/main");
 
           }
