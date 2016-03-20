@@ -25,6 +25,16 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'loginctrl'
       })
+      .when('/main', {
+        templateUrl: 'views/main.tmpl.html',
+        controller: 'MainCtrl',
+        controllerAs: 'mainctrl',
+        resolve: {
+          loggedUser: function(LoggedUserFactory){
+            return LoggedUserFactory.getLoggedUser();
+          }
+        }
+      })
       .when('/404', {
         templateUrl: '/404.html'
       })
