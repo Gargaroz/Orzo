@@ -19,8 +19,14 @@ angular.module('orzoApp')
     	};
     	var passwordIsCorrect = function(userName, password){
     		// $timeout(function(){
-    			if (users[users.indexOf(userName)].password == password) return true;
-    			else return false;
+    			var ret = false;
+    			for (var i=0, length=users.length;i<length;i++){
+	    			if (users[i].password == password) {
+	    				ret = true;
+	    				break;
+	    			}
+    			}
+    			return ret;
     		// }, 2000);
     	};
     	var localCheckCredentials = function (userName, password){
