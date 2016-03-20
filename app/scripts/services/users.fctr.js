@@ -29,35 +29,63 @@ angular.module('orzoApp')
     			return ret;
     		// }, 2000);
     	};
-    	var localCheckCredentials = function (userName, password){
+    	var _checkCredentials = function (userName, password){
     		if (userExists(userName)) {
     			if (passwordIsCorrect(userName, password)) return true;
     			else return 'La password è sbagliata';
     		} else return 'Utente inesistente';
     	};
+        var _getUserInfo = function (userName){
+            for (var i=0, length=users.length;i<length;i++){
+                if (users[i].name==userName) {
+                    return users[i];
+                }
+                console.log("wtf?");
+            }
+        };
+        var _addUser = function (userName, password){
+            users.push({name: userName, password: password});
+        };
     	var users = [
     	{
     		name: 'Davide',
-    		password: 'Davide.c0m'
+    		password: 'Davide.c0m',
+            realName: 'Davide',
+            realSurname: 'Caputo',
+            email: 'caputodav93@gmail.com'
     	},
     	{
     		name: 'Jack',
-    		password: 'Jack.c0m'
+    		password: 'Jack.c0m',
+            realName: 'Gianluca',
+            realSurname: 'Esposito',
+            email: 'g.esposito16@gmail.com'
     	},
     	{
     		name: 'Pippo',
-    		password: 'Pippo.c0m'
+    		password: 'Pippo.c0m',
+            realName: 'Pippo',
+            realSurname: 'Poi',
+            email: 'pippopoi@gmail.com'
     	},
     	{
     		name: 'Pluto',
-    		password: 'Pluto.c0m'
+    		password: 'Pluto.c0m',
+            realName: 'Pluto',
+            realSurname: 'Mouse',
+            email: 'plutomouse@gmail.com'
     	},
     	{
     		name: 'Paperino',
-    		password: 'Paperino.c0m'
+    		password: 'Paperino.c0m',
+            realName: 'Donald',
+            realSurname: 'Duck',
+            email: 'donaldduck@gmail.com'
     	}
 		];
   	return {
-  		checkCredentials: localCheckCredentials
+  		checkCredentials: _checkCredentials,
+        getUserInfo: _getUserInfo,
+        addUser: _addUser
   	}    
 }]);
