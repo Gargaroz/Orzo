@@ -51,7 +51,7 @@ angular.module('orzoApp')
     		loggedUser = {name: 'nessuno', password: 'nessuno', realName: 'nessuno', realSurname: 'nessuno', email: 'nessuno'};
     	};
         var _updateUser = function(user){
-            UsersFactory.updateUser(user);
+            loggedUser = UsersFactory.updateUser(user);
         };
     	return {
     		/*GETTERS*/

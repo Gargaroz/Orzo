@@ -34,8 +34,12 @@ angular.module('orzoApp')
           vm.goToMain=function(user){
             LoggedUserFactory.setLoggedUser(user);
             $location.path("/main");
-
           }
+
+          vm.goToRegister=function(user){
+            LoggedUserFactory.setLoggedUserName(user);
+            $location.path("/register");
+          };
 
 
   }]);

@@ -8,7 +8,7 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('ControlPanelCtrl',[ 'LoggedUserFactory', 'loggedUser', function (LoggedUserFactory, loggedUser) {
+  .controller('ControlPanelCtrl',[ 'LoggedUserFactory', 'loggedUser', '$location', function (LoggedUserFactory, loggedUser, $location) {
 		var vm=this;
 		var utenteTemp=loggedUser;
 		vm.utenteLocale={
@@ -18,6 +18,16 @@ angular.module('orzoApp')
 			'Cognome': utenteTemp.realSurname,
 			'Email': utenteTemp.email
 		};
+
+		vm.goToFunction=function(){
+			 $location.path("/main");
+		}
+
+		vm.updateCampi=function(user){
+			LoggedUserFactory.updateUser(user);
+			console.log(LoggedUserFactory.getLoggedUser());
+			
+		}
 
 
   }]);

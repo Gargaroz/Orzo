@@ -46,7 +46,7 @@ angular.module('orzoApp')
             for (var i=0, length=users.length;i<length;i++){
                 if (users[i].id == user.id) {
                     users[i] = user;
-                    return;
+                    return user;
                 }
             }
         };
