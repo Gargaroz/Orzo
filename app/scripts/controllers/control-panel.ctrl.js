@@ -24,6 +24,7 @@ angular.module('orzoApp')
 		}
 
 		vm.updateCampi=function(user){
+			console.log("Prima Del Passaggio Alla Funzione", user);
 			LoggedUserFactory.updateUser(user);
 			console.log(LoggedUserFactory.getLoggedUser());
 			
