@@ -9,7 +9,7 @@
  */
 angular.module('orzoApp')
   .factory('LoggedUserFactory', ['UsersFactory', function (UsersFactory) {
-    	var loggedUser = {name: 'nessuno', password: 'nessuno', realName: 'nessuno', realSurname: 'nessuno', email: 'nessuno'};
+    	var loggedUser = {id: -1, name: 'nessuno', password: 'nessuno', realName: 'nessuno', realSurname: 'nessuno', email: 'nessuno'};
   
     	var _getLoggedUser = function(){
     		return loggedUser;
@@ -50,6 +50,9 @@ angular.module('orzoApp')
     	var _logout = function(){
     		loggedUser = {name: 'nessuno', password: 'nessuno', realName: 'nessuno', realSurname: 'nessuno', email: 'nessuno'};
     	};
+        var _updateUser = function(user){
+            UsersFactory.updateUser(user);
+        };
     	return {
     		/*GETTERS*/
     		getLoggedUser: _getLoggedUser,
@@ -63,6 +66,7 @@ angular.module('orzoApp')
     		setLoggedUserRealSurname: _setLoggedUserRealSurname,
     		setLoggedUserEmail: _setLoggedUserEmail,
     		/*OTHERS*/
-    		logout: _logout
+    		logout: _logout,
+            updateUser: _updateUser
     	}
     }]);
