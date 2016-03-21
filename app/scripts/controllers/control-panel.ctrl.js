@@ -8,5 +8,16 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('ControlPanelCtrl', function () {
-  });
+  .controller('ControlPanelCtrl',[ 'LoggedUserFactory', 'loggedUser', function (LoggedUserFactory, loggedUser) {
+		var vm=this;
+		var utenteTemp=loggedUser;
+		vm.utenteLocale={
+			'Nome Utente': utenteTemp.name,
+			'Password': utenteTemp.password,
+			'Nome': utenteTemp.realName,
+			'Cognome': utenteTemp.realSurname,
+			'Email': utenteTemp.email
+		};
+
+
+  }]);
