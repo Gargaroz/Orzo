@@ -10,24 +10,20 @@
 angular.module('orzoApp')
   .factory('UsersFactory',['$timeout', function ($timeout) {
     	var userExists = function(userName){
-    		// $timeout(function(){
-    			for (var i=0,length=users.length;i<length;i++){
-    				if (users[i].name == userName) return true;
-    				return false
-    			}
-    		// }, 2000);
+			for (var i=0,length=users.length;i<length;i++){
+				if (users[i].name == userName) return true;
+				return false
+			}
     	};
     	var passwordIsCorrect = function(userName, password){
-    		// $timeout(function(){
-    			var ret = false;
-    			for (var i=0, length=users.length;i<length;i++){
-	    			if (users[i].password == password) {
-	    				ret = true;
-	    				break;
-	    			}
+			var ret = false;
+			for (var i=0, length=users.length;i<length;i++){
+    			if (users[i].password == password) {
+    				ret = true;
+    				break;
     			}
-    			return ret;
-    		// }, 2000);
+			}
+			return ret;
     	};
     	var _checkCredentials = function (userName, password){
     		if (userExists(userName)) {
@@ -40,43 +36,56 @@ angular.module('orzoApp')
                 if (users[i].name==userName) {
                     return users[i];
                 }
-                console.log("wtf?");
             }
         };
         var _addUser = function (user){
+            user.id = users.length+1;
             users.push(user);
+        };
+        var _updateUser = function(user){
+            for (var i=0, length=users.length;i<length;i++){
+                if (users[i].id == user.id) {
+                    users[i] = user;
+                    return;
+                }
+            }
         };
     	var users = [
     	{
-    		name: 'Davide',
+    		id: 1,
+            name: 'Davide',
     		password: 'Davide.c0m',
             realName: 'Davide',
             realSurname: 'Caputo',
             email: 'caputodav93@gmail.com'
     	},
     	{
-    		name: 'Jack',
+    		id: 2,
+            name: 'Jack',
     		password: 'Jack.c0m',
             realName: 'Gianluca',
             realSurname: 'Esposito',
             email: 'g.esposito16@gmail.com'
     	},
     	{
-    		name: 'Pippo',
+    		id: 3,
+            name: 'Pippo',
     		password: 'Pippo.c0m',
             realName: 'Pippo',
             realSurname: 'Poi',
             email: 'pippopoi@gmail.com'
     	},
     	{
-    		name: 'Pluto',
+    		id: 4,
+            name: 'Pluto',
     		password: 'Pluto.c0m',
             realName: 'Pluto',
             realSurname: 'Mouse',
             email: 'plutomouse@gmail.com'
     	},
     	{
-    		name: 'Paperino',
+    		id: 5,
+            name: 'Paperino',
     		password: 'Paperino.c0m',
             realName: 'Donald',
             realSurname: 'Duck',
@@ -86,6 +95,7 @@ angular.module('orzoApp')
   	return {
   		checkCredentials: _checkCredentials,
         getUserInfo: _getUserInfo,
-        addUser: _addUser
+        addUser: _addUser,
+        updateUser: _updateUser
   	}    
 }]);
