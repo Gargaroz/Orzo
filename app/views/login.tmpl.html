@@ -29,7 +29,7 @@ body {
 
 	<button type="submit" ng-disabled="loginForm.username.$error.required || loginForm.password.$error.required || loginctrl.disLog" class="btn btn-primary" ng-click="loginctrl.controllo(username, password)"> ENTRA </button>
 
-		<button type="submit" class="btn btn-primary" ng-click="loginctrl.goToRegister(username)">REGISTRATI</button><span ng-show="loginctrl.disReg" ></span>
+		<button type="submit" class="btn btn-primary" ng-click="loginctrl.goToRegister(username,password)">REGISTRATI</button><span ng-show="loginctrl.disReg" ></span>
 
 				<h4 ng-class="{ 'text-enter':true}">{{loginctrl.messLog}}</h4> 
 

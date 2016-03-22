@@ -21,14 +21,14 @@ angular.module('orzoApp')
 
 		vm.goToFunction=function(){
 			 $location.path("/main");
-		}
+		};
 
-		vm.updateCampi=function(user){
-			console.log("Prima Del Passaggio Alla Funzione", user);
-			LoggedUserFactory.updateUser(user);
-			console.log(LoggedUserFactory.getLoggedUser());
-			
-		}
+		vm.updateCampi=function(){
+				console.log("PRIMA ",vm.utenteLocale)
+			LoggedUserFactory.updateUser(vm.utenteLocale);
+							console.log("DOPO ",vm.utenteLocale)
+
+		};
 
 
   }]);

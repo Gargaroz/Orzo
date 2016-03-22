@@ -61,9 +61,7 @@ angular.module('orzoApp')
             tempUser.realName = user.realName;
             tempUser.realSurname = user.realSurname;
             tempUser.email = user.email;
-            console.log("UTENTE TEMP" , tempUser);
             loggedUser = UsersFactory.updateUser(tempUser);
-            console.log("UTENTE AGGIORNATAO " , loggedUser);
         };
     	return {
     		/*GETTERS*/
