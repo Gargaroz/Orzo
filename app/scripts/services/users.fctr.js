@@ -33,23 +33,29 @@ angular.module('orzoApp')
     		} else return 'Utente inesistente';
     	};
         var _getUserInfo = function (userName){
+            var retUser = false;
             for (var i=0, length=users.length;i<length;i++){
                 if (users[i].name==userName) {
-                    return users[i];
+                    retUser = users[i];
+                    break;
                 }
             }
+            return retUser;
         };
         var _addUser = function (user){
             user.id = users.length+1;
             users.push(user);
         };
         var _updateUser = function(user){
+            var retUser = false;
             for (var i=0, length=users.length;i<length;i++){
                 if (users[i].id == user.id) {
                     users[i] = user;
-                    return user;
+                    retUser = user;
+                    break;
                 }
             }
+            return retUser;
         };
     	var users = [
     	{
