@@ -55,11 +55,11 @@ angular
         controller: 'RegisterCtrl',
         controllerAs: 'registerctrl',
         resolve: {
-          unloggedUser: function(LoggedUserFactory){
-            var unloggedUser = {};
-            unloggedUser.name = LoggedUserFactory.getLoggedUserName();
-            unloggedUser.password = LoggedUserFactory.getLoggedUserPassword();
-            return unloggedUser;
+          unLoggedUser: function(LoggedUserFactory){
+            var unLoggedUser = {};
+            unLoggedUser.name = LoggedUserFactory.getLoggedUserName();
+            unLoggedUser.password = LoggedUserFactory.getLoggedUserPassword();
+            return unLoggedUser;
           }
         }
       })
