@@ -10,10 +10,11 @@
 angular.module('orzoApp')
   .factory('UsersFactory',['$timeout', function ($timeout) {
     	var userExists = function(userName){
+            var ret = false;
 			for (var i=0,length=users.length;i<length;i++){
-				if (users[i].name == userName) return true;
-				return false
+				if (users[i].name == userName) ret = true;
 			}
+            return ret;
     	};
     	var passwordIsCorrect = function(userName, password){
 			var ret = false;
@@ -54,7 +55,7 @@ angular.module('orzoApp')
     	{
     		id: 1,
             name: 'Davide',
-    		password: 'Davide.c0m',
+    		password: 'da',
             realName: 'Davide',
             realSurname: 'Caputo',
             email: 'caputodav93@gmail.com'
@@ -62,7 +63,7 @@ angular.module('orzoApp')
     	{
     		id: 2,
             name: 'Jack',
-    		password: 'Jack.c0m',
+    		password: 'ja',
             realName: 'Gianluca',
             realSurname: 'Esposito',
             email: 'g.esposito16@gmail.com'
@@ -70,7 +71,7 @@ angular.module('orzoApp')
     	{
     		id: 3,
             name: 'Pippo',
-    		password: 'Pippo.c0m',
+    		password: 'pi',
             realName: 'Pippo',
             realSurname: 'Poi',
             email: 'pippopoi@gmail.com'
@@ -78,7 +79,7 @@ angular.module('orzoApp')
     	{
     		id: 4,
             name: 'Pluto',
-    		password: 'Pluto.c0m',
+    		password: 'pl',
             realName: 'Pluto',
             realSurname: 'Mouse',
             email: 'plutomouse@gmail.com'
@@ -86,7 +87,7 @@ angular.module('orzoApp')
     	{
     		id: 5,
             name: 'Paperino',
-    		password: 'Paperino.c0m',
+    		password: 'pa',
             realName: 'Donald',
             realSurname: 'Duck',
             email: 'donaldduck@gmail.com'

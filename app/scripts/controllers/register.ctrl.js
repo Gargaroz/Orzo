@@ -8,7 +8,7 @@
  * Controller of the orzoApp
  */
 angular.module('orzoApp')
-  .controller('RegisterCtrl', ['unLoggedUser', 'LoggedUserFactory', 'loggedUser', '$location', function (unLoggedUser, LoggedUserFactory, loggedUser, $location){
+  .controller('RegisterCtrl', ['unLoggedUser', 'LoggedUserFactory', '$location', function (unLoggedUser, LoggedUserFactory, $location){
 
   	var vm=this;
 
