@@ -9,12 +9,16 @@
  */
 angular.module('orzoApp')
   .controller('RegisterCtrl', ['unLoggedUser', 'LoggedUserFactory', '$location', function (unLoggedUser, LoggedUserFactory, $location){
-  var vm=this;
-		var utenteTemp=unLoggedUser;
-		vm.utenteLocale={
-			'Nome Utente': utenteTemp.name,
-			'Password': utenteTemp.password,
+  			var vm=this;
+  		var user=LoggedUserFactory.getLoggedUserName();
+  		var pass=LoggedUserFactory.getLoggedUserPassword();
 
+		vm.utenteLocale={
+			'Nome Utente': user,
+			'Password': pass,
+			'Nome': " " ,
+			'Cognome': " ",
+			'Email': " "
 		};
 
   }]);

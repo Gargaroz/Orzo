@@ -37,6 +37,7 @@ angular.module('orzoApp')
     	};
     	var _setLoggedUserName = function(name){
     		loggedUser.name = name;
+
     	};
     	var _setLoggedUserPassword = function(password){
     		loggedUser.password = password;

@@ -37,8 +37,12 @@ angular.module('orzoApp')
           }
 
           vm.goToRegister=function(user,pass){
-            LoggedUserFactory.setLoggedUserName(user);
-            LoggedUserFactory.setLoggedUserPassword(pass);
+
+            console.log("USER ", user);
+             console.log("PASS ", pass);
+
+              LoggedUserFactory.setLoggedUserName(user);
+              LoggedUserFactory.setLoggedUserPassword(pass);
 
             $location.path("/register");
           };
