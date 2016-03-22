@@ -43,8 +43,17 @@ angular.module('orzoApp')
             return retUser;
         };
         var _addUser = function (user){
-            user.id = users.length+1;
-            users.push(user);
+            if (userExists(user.name)) {return false;}
+            var newUser = {};
+            newUser.id = users.length+1;
+            newUser.name = user.name;
+            newUser.password = user.password;
+            newUser.realName = user.realName;
+            newUser.realSurname = user.realSurname;
+            newUser.email = user.email;
+
+            users.push(newUser);
+            return true;
         };
         var _updateUser = function(user){
             var retUser = false;
